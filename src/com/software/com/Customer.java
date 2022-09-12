@@ -3,87 +3,45 @@ package com.software.com;
 import java.util.Scanner;
 
 public class Customer {
-	private String name;
-	private String email;
-	private long phoneNo;
-	private String userName;
-	private String password;
+	public double longitude;
+	public double lattitude;
+	public double radius;
+	
 	public Customer() {
-		System.out.println("Try Logging in with the right credentials !");
+		System.out.println("Please provide the right lattitude and longitude !");
 	}
 	
-	public Customer(String name, String email, long phoneNo) {
-		this.name = name;
-		this.email = email;
-		this.phoneNo = phoneNo;
+	public Customer(double longitude, double lattitude, double radius) {
+		super();
+		this.longitude = longitude;
+		this.lattitude = lattitude;
+		this.radius = radius;
 	}
 
-	public Customer(String userName, String password) {
-		this.userName = userName;
-		this.password = password;
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	public double getLattitude() {
+		return lattitude;
+	}
+
+	public void setLattitude(double lattitude) {
+		this.lattitude = lattitude;
 	}
 	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public long getPhoneNo() {
-		return phoneNo;
-	}
-
-	public void setPhoneNo(long phoneNo) {
-		this.phoneNo = phoneNo;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	System.out.println("Registration process Started ");
-    public void register() {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Registration page");
-        System.out.print("Enter your name:");
-        String name=sc.next();
-        System.out.print("Enter your email id: ");
-        String email=sc.next();
-        System.out.print("Enter your mobile number: ");
-        double phoneNo=sc.nextLong();
-        System.out.println("Name : " + name + " Email : " + email + " Phone No : " + phoneNo);
-        System.out.println("\n Hello " + name+ " ! \n Registration successful");
-    }
-	
-	public void login() {
+	public double getRadius() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter your username : ");
-		userName = sc.next();
-		System.out.println("Enter your password : ");
-		password = sc.next();
-		System.out.println("Login Successful");
+		System.out.println("Enter the longitude ");
+		longitude = sc.nextDouble();
+		System.out.println("Enter the lattitude ");
+		lattitude = sc.nextDouble();
+		radius = (longitude + lattitude)/180;
+		return radius;
 	}
 
-	
 }
