@@ -6,14 +6,24 @@ public class TestMain {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("--------------- ABC Software ---------------");
-		Registration r = new Registration();
-		System.out.println("Registration of the Customer started ");
-		r.register();
+		System.out.println("-----#######---------- ABC Software -------#######--------");
 		
-		Login l = new Login();
-		System.out.println("Login process of the customer needed ");
-		l.login();
+		System.out.println("Do you have an existeing account");
+		String choice = sc.nextLine();
+		if(choice.equalsIgnoreCase("yes")) {
+			Login l = new Login();
+			System.out.println("Login process of the customer needed ");
+			l.login();
+		}
+		else {
+			Registration r = new Registration();
+			System.out.println("Registration of the Customer started ");
+			r.register();
+			
+			Login l = new Login();
+			System.out.println("Login process of the customer needed ");
+			l.login();
+		}
 		
 		Customer c = new Customer();
 		if(c.getRadius() < 2) {

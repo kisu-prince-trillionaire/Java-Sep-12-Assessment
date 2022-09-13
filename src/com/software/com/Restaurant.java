@@ -11,10 +11,28 @@ public class Restaurant {
 	}
 	
 	public void locate1() {
-		System.out.println("Hotels nearby 1.5 km is");
+		int count=0;
+		
 		for(RestaurantNames name: RestaurantNames.values()) {
 			if(name.num < 2) {
-				System.out.print(name + " ");
+				count++;
+			}
+		}
+		if(count <= 5) {
+			System.out.println("You have less than 5 hotels nearby 1.5 km !");
+			System.out.println("Therefore showing you the hotels near by 2.5 km :-----");
+			for(RestaurantNames name: RestaurantNames.values()) {
+				if(name.num < 2.5) {
+					System.out.print(name + " ");
+				}
+			}	
+		}
+		else {
+			System.out.println("Hotels nearby 1.5 km is");
+			for(RestaurantNames name: RestaurantNames.values()) {
+				if(name.num < 2) {
+					System.out.print(name + " ");
+				}
 			}
 		}
 	}
